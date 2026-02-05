@@ -22,7 +22,8 @@ Laravel 12.x
 
 Ubuntu 24.10 repositories may move to old releases. Fix it with:
 
-```sudo sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list{,.d/ubuntu.sources}
+```
+sudo sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list{,.d/ubuntu.sources}
 sudo apt clean
 sudo rm -rf /var/lib/apt/lists/*
 sudo apt update
@@ -30,7 +31,8 @@ sudo apt update
 
 ### 2. Install Apache & PHP 8.3
    
-```sudo apt install apache2 -y
+```
+sudo apt install apache2 -y
 sudo systemctl enable apache2
 sudo systemctl start apache2
 sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear -y
@@ -39,7 +41,8 @@ sudo apt install php8.3-sqlite3 -y
 
 ### 3. Install Composer
    
-```sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+```
+sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 sudo php -r "unlink('composer-setup.php');"
@@ -53,7 +56,8 @@ sudo apt install nodejs npm -y
 
 ### 5. Create a Fresh Laravel Application
    
-```composer create-project laravel/laravel quotes-app
+```
+composer create-project laravel/laravel quotes-app
 cd quotes-app
 php artisan config:clear
 php artisan migrate
@@ -71,7 +75,8 @@ Copy the package into:
 
 - Update the composer.json file of the quotes-app and added the following configuration:
   
-```"minimum-stability": "dev",
+```
+"minimum-stability": "dev",
 "prefer-stable": true,
 "repositories": [
     {
@@ -102,6 +107,20 @@ npm run build
 php artisan vendor:publish --provider="MyVendor\Quotes\QuotesServiceProvider" --tag=config --force
 php artisan vendor:publish --provider="MyVendor\Quotes\QuotesServiceProvider" --tag=assets --force
 ```
+Create a new blade php file(**quotes-ui.blade.php**) to the directory of **quotes-app/resources/views** and paste below code.
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quotes UI</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="{{ asset('vendor/quotes/dist/quotes-ui.js') }}"></script>
+</body>
+</html>
+```
+
 Clear caches:
 ```
 php artisan route:clear
@@ -120,4 +139,4 @@ Visit:
 
 **http://localhost:8000/quotes-ui**
 
-## 🎉 You should now see the Quotes UI test page.
+#### 🎉 You should now see the Quotes UI test page.
