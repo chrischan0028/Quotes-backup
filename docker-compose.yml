@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: quotes-laravel-test
+    ports:
+      - "8080:8000"
+    volumes:
+      - .:/package
+    environment:
+      APP_ENV: local
+      APP_DEBUG: true
