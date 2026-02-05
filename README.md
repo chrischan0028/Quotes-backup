@@ -5,10 +5,15 @@ A reusable Laravel package that provides a Quotes UI, designed to be installed i
 🧰 Requirements
 
 Ubuntu 24.10
+
 PHP 8.3
+
 Composer
+
 Node.js & npm
+
 SQLite
+
 Laravel 12.x
 
 🖥️ Local Installation (Manual Setup)
