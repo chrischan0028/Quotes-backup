@@ -16,6 +16,21 @@ SQLite
 
 Laravel 12.x
 
+## 🐳 Docker Setup
+
+This project includes a fully automated Docker-based test environment.
+
+The Docker setup ensures:
+*   A fresh Laravel 12 application is installed automatically
+*   The Quotes package is linked via Composer path repository
+*   Frontend assets are built automatically
+*   No local PHP, Composer, Node, or Laravel installation is required
+
+```
+docker-compose build --no-cache
+docker-compose up
+```
+
 ## 🖥️ Local Installation (Manual Setup)
 
 ### 1. Fix Ubuntu 24.10 apt update Issue
