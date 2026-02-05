@@ -47,7 +47,8 @@ sudo php -r "unlink('composer-setup.php');"
 
 ### 4. Install Node.js & npm
    
-```sudo apt install nodejs npm -y
+```
+sudo apt install nodejs npm -y
 ```
 
 ### 5. Create a Fresh Laravel Application
