@@ -1,25 +1,25 @@
 FROM php:8.3-cli
 
-# System dependencies
+# Install system dependencies
 RUN apt update && apt install -y \
-    git \
-    curl \
-    unzip \
-    zip \
-    nodejs \
-    npm \
-    sqlite3 \
-    libsqlite3-dev
+   git \
+   zip \ 
+   unzip \
+   curl \
+   nodejs \
+   npm \
+   sqlite3 \
+   libsqlite3-dev
 
-# PHP extensions
+# Install PHP SQLite extension
 RUN docker-php-ext-install pdo pdo_sqlite
 
-# Composer
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www
+WORKDIR /var/www/html/test
 
-# Copy entrypoint
+# Copy entrypoint script
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

@@ -11,5 +11,5 @@ services:
     volumes:
       - .:/package
     environment:
-      APP_ENV: local
-      APP_DEBUG: true
+      APP_ENV: "local"
+      APP_DEBUG: "true"
