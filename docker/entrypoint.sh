@@ -27,6 +27,9 @@ echo "Building package frontend assets..."
 cd packages/MyVendor/Quotes
 npm install
 npm run build
+
+#echo "Test using PestPHP..."
+#vendor/bin/pest
 cd ../../../
 
 echo "Publishing package config & assets..."

@@ -2,7 +2,8 @@
     "name": "my-vendor/quotes",
     "autoload": {
       "psr-4": {
-        "MyVendor\\Quotes\\": "src/"
+        "MyVendor\\Quotes\\": "src/",
+        "MyVendor\\Quotes\\Tests\\": "tests/"
       }
     },
     "extra": {
@@ -20,6 +21,14 @@
       "laravel/framework": "^12.0",
       "guzzlehttp/guzzle": "^7.8",
       "sammyjo20/saloon": "^3.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.3",
+        "orchestra/testbench": "^10.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
-  }
-  
+}
